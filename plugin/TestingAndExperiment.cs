@@ -23,7 +23,7 @@ namespace MissionController
                 state.protoVessels.RemoveAt(state.activeVesselIdx);
             }
             GamePersistence.SaveGame("persistent", HighLogic.SaveFolder, SaveMode.OVERWRITE);
-            
+          
         }
     }
 }

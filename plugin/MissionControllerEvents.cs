@@ -80,8 +80,9 @@ namespace MissionController
             catch { }
 
             // NK recycle
-            if (!HighLogic.LoadedSceneIsEditor && activeVessel != v && (v.situation == Vessel.Situations.FLYING || v.situation == Vessel.Situations.SUB_ORBITAL) && v.mainBody.GetAltitude(v.CoM) <= 25000 && !v.isEVA && v.orbit.referenceBody.bodyName.Equals("Kerbin"))
+            if (!HighLogic.LoadedSceneIsEditor && activeVessel != v && (v.situation == Vessel.Situations.FLYING || v.situation == Vessel.Situations.SUB_ORBITAL) && v.mainBody.GetAltitude(v.CoM) <= 25000 && !v.isEVA && v.orbit.referenceBody.bodyName.Equals("Kerbin") && (settings.difficulty == 1 || settings.difficulty == 2))
             {
+                
                 print("*MC* Vessel " + v.name + " destroyed. Alt " + v.mainBody.GetAltitude(v.CoM) + ", body " + v.orbit.referenceBody.bodyName + ", sit = " + v.situation);
                 double mass = 0;
                 double pdrag = 0.0;
